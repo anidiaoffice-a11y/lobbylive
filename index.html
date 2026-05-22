@@ -1,60 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>LobbyLive</title>
 
   <style>
-    body{
-      margin:0;
-      background:#050505;
-      color:white;
-      font-family:Arial,sans-serif;
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      overflow:hidden;
+
+    body {
+      margin: 0;
+      background: #050505;
+      color: white;
+
+      font-family: Arial, sans-serif;
+
+      height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
     }
 
-    .box{
-      max-width:700px;
-      padding:40px;
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 2;
     }
 
-    h1{
-      font-size:64px;
-      margin-bottom:20px;
-      font-weight:800;
+    h1 {
+      font-size: 72px;
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: -2px;
     }
 
-    h1 span{
-      color:#d88b63;
+    h1 span {
+      color: #d88b63;
     }
 
-    p{
-      color:#aaa;
-      font-size:20px;
-      line-height:1.6;
+    #counter {
+      margin-top: 22px;
+      color: #b98b70;
+      font-size: 18px;
+      letter-spacing: 1px;
     }
 
-    .glow{
-      position:absolute;
-      width:500px;
-      height:500px;
-      background:radial-gradient(circle,#8f3d1d55 0%, transparent 70%);
-      filter:blur(40px);
+    .glow {
+      position: absolute;
+
+      width: 600px;
+      height: 600px;
+
+      background:
+        radial-gradient(circle,
+          rgba(180, 90, 40, 0.28) 0%,
+          rgba(0, 0, 0, 0) 70%);
+
+      filter: blur(60px);
+
+      z-index: 1;
     }
+
   </style>
 </head>
 
 <body>
 
-<div class="glow"></div>
+  <div class="glow"></div>
 
-<div class="box">
-  <h1>Lobby<span>Live</span></h1>
+  <div class="container">
 
- 
+    <h1>
+      Lobby<span>Live</span>
+    </h1>
+
+    <div id="counter">
+      Visits: 0
+    </div>
+
+  </div>
+
+  <script>
+
+    let visits = localStorage.getItem("lobbyVisits");
+
+    if (!visits) {
+      visits = 0;
+    }
+
+    visits++;
+
+    localStorage.setItem("lobbyVisits", visits);
+
+    document.getElementById("counter").innerText =
+      "Visits from this browser: " + visits;
+
+  </script>
+
+</body>
+
+</html>
