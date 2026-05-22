@@ -1,12 +1,67 @@
-אמיר רפאל
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LobbyLive</title>
+
+  <style>
+    body{
+      margin:0;
+      background:#050505;
+      color:white;
+      font-family:Arial,sans-serif;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    .box{
+      max-width:700px;
+      padding:40px;
+    }
+
+    h1{
+      font-size:64px;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    h1 span{
+      color:#d88b63;
+    }
+
+    p{
+      color:#aaa;
+      font-size:20px;
+      line-height:1.6;
+    }
+
+    .glow{
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:radial-gradient(circle,#8f3d1d55 0%, transparent 70%);
+      filter:blur(40px);
+    }
+  </style>
 </head>
-<body style="background:black;color:white;text-align:center;padding-top:100px;font-family:Arial;">
-  <h1>LobbyLive is alive</h1>
-  <p>צאטוש אתה אלוף.</p>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="box">
+  <h1>Lobby<span>Live</span></h1>
+
+  <p>
+    A new live discovery experience is coming online.<br>
+    The lobby is waking up.
+  </p>
+</div>
+
 </body>
 </html>
